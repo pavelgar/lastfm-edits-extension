@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Last.fm edits",
+  "version": "0.0.1",
+  "author": "Pavel Garmuyev",
+  "description": "Helps you edit scrobbles in bulk.",
+  "homepage_url": "https://github.com/pavelgar/lastfm-edits-extension",
+  "permissions": ["storage", "activeTab"],
+  "icons": {
+    "24": "assets/icon.svg",
+    "48": "assets/icon.svg",
+    "96": "assets/icon.svg",
+    "128": "assets/icon.svg",
+    "256": "assets/icon.svg"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "Last.fm edits",
+    "default_icon": "assets/icon.svg",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "browser_style": true,
+    "page": "options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.last.fm/*"],
+      "js": ["js/content.js"]
+    }
+  ]
+}

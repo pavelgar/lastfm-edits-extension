@@ -1,0 +1,37 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf ./dist",
+    "clean:all": "rm -rf ./dist || rm -rf ./node_modules",
+    "lint": "eslint .",
+    "dev": "cross-env NODE_ENV=development webpack -d",
+    "prod": "cross-env NODE_ENV=production webpack -p",
+    "watch": "cross-env NODE_ENV=watch webpack -d"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.2.1",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.11.0",
+    "html-webpack-plugin": "^4.5.0",
+    "ts-loader": "^8.0.5",
+    "typescript": "^4.0.3",
+    "webextension-polyfill": "^0.6.0",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.0.0",
+    "webpack-extension-reloader": "^1.1.4"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "amd": true,
+      "webextensions": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ]
+  }
+}
